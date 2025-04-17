@@ -1,12 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Journal</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  </head>
-  <body>
-    <script src="journal.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Journal for Favorite Pokemons</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="bg-yellow-400 p-4 flex justify-between items-center">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+                    alt="pokemon-logo"
+                    class="w-40"
+                />
+                <p class="text-5xl text-gray-100">|</p>
+                <h1 class="text-5xl font-bold text-blue-600">
+                    Favorite Pokémon Journal
+                </h1>
+                <p class="text-5xl text-gray-100">|</p>
+                <ul class="mr-10 flex gap-4 font-bold">
+                    <li>
+                        <a
+                            href="#home"
+                            class="hover:bg-blue-500 bg-blue-600 text-white py-1 px-2 rounded"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#journal"
+                            class="hover:bg-blue-500 bg-blue-600 text-white py-1 px-2 rounded"
+                            >Journal</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="bg-gray-100 h-150">
+            <h2 class="p-6 font-semibold text-gray-800">
+                Overview of Your Favorite Pokémon:
+            </h2>
+            <ul id="favPokemonList" class="grid">
+                <li>
+                    <img src="" alt="" />
+                    <p class="name"></p>
+                    <p class="stats"></p>
+                    <button id="personalNote"></button>
+                </li>
+            </ul>
+        </main>
+        <footer></footer>
+        <script src="journal.js"></script>
+    </body>
 </html>
