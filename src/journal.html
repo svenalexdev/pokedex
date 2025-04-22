@@ -38,19 +38,26 @@
             </nav>
         </header>
         <main class="bg-gray-100 h-150">
-            <h2 class="p-6 font-semibold text-gray-800">
-                Overview of Your Favorite Pokémon:
-            </h2>
-            <ul id="favPokemonList" class="grid">
-                <li>
-                    <img src="" alt="" />
-                    <p class="name"></p>
-                    <p class="stats"></p>
-                    <button id="personalNote"></button>
-                </li>
-            </ul>
+            <div class="flex justify-center">
+                <h2
+                    class="ml-4 mt-10 p-2 font-semibold bg-blue-600 text-white rounded inline-block w-150 text-center text-lg"
+                >
+                    Overview of Your Favorite Pokémon:
+                </h2>
+            </div>
+            <!-- <ul
+                    id="favorite-pokemon"
+                    class="bg-white ml-4 mt-10 w-73 rounded"
+                ></ul> -->
+            <section id="pokemon-card" class="flex"></section>
         </main>
-        <footer></footer>
-        <script src="journal.js"></script>
+        <footer class="bg-yellow-400 h-10 flex items-center justify-center">
+            <p class="text-blue-600 font-semibold text-sm">
+                © 2025 Pokémon Journal. All rights reserved. This site is a
+                fan-made project and is not affiliated with Nintendo, Game
+                Freak, or The Pokémon Company.
+            </p>
+        </footer>
+        <script src="./journal.js"></script>
     </body>
 </html>
