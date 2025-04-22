@@ -144,12 +144,32 @@ const displayFavPokemon = () => {
             "h-20"
         );
 
-        //BUTTON
+        const saveButton = document.createElement("button");
+        saveButton.textContent = "Save!";
+        saveButton.classList.add(
+            "bg-blue-600",
+            "text-white",
+            "hover:bg-blue-500",
+            "py-1",
+            "px-2",
+            "rounded",
+            "cursor-pointer"
+        );
+
+        // Create link between save button and respective text field. But: only last note saved is displayed in console
+        saveButton.addEventListener("click", () => {
+            const userNote = notes.value;
+            pokemon.note = userNote;
+            localStorage.setItem(favPokemonKey, JSON.stringify(favPokemon));
+            notes.value = "";
+            alert("Note sucessfully saved!");
+        });
 
         item.appendChild(img);
         item.appendChild(name);
         item.appendChild(stats);
         item.appendChild(notes);
+        item.appendChild(saveButton);
 
         card.appendChild(item);
     });
