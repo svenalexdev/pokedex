@@ -3,9 +3,9 @@ const searchForm = document.getElementById("search-bar");
 const searchInput = searchForm.querySelector("input");
 const mainSection = document.querySelector("main");
 
-async function fetchPokemon(query) {
+async function fetchPokemon(pokemonNameOrId) {
   try {
-    const res = await fetch(`${apiURL}/${query.toLowerCase()}`);
+    const res = await fetch(`${apiURL}/${pokemonNameOrId.toLowerCase()}`);
     if (!res.ok) {
       throw new Error("Pokemon not found");
     }
@@ -72,3 +72,39 @@ function showPokemon(pokemon) {
   const card = createPokemonCard(pokemon);
   mainSection.appendChild(card);
 }
+
+async function loadInitialPokemon() {
+  try {
+    const res = await fetch(`${apiURL}?limit=20`);
+    const data = await res.json();
+
+    const grid = document.createElement("div");
+    grid.className =
+      "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4";
+    mainSection.appendChild(grid);
+
+    for (const entry of data.results) {
+      const pokemonData = await fetchPokemon(entry.name);
+      if (pokemonData) {
+        const card = createPokemonCard(pokemonData);
+        grid.appendChild(card);
+      }
+    }
+  } catch (error) {
+    console.error("Error loading initial Pokémon:", error);
+  }
+}
+
+searchForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const pokemonNameOrId = searchInput.value.trim();
+  if (pokemonNameOrId === "") return;
+
+  const pokemon = await fetchPokemon(pokemonNameOrId);
+  if (pokemon) {
+    showPokemon(pokemon);
+  }
+  console.log("Form submitted!");
+});
+
+loadInitialPokemon();
