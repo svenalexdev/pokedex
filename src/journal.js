@@ -24,7 +24,7 @@
 // 2. Create functions for localStorage (retrieve with getItem, save with setItem)
 // 3. Create DOM for buidling card
 
-const favPokemonKey = "favPokemon";
+const favPokemonKey = "favorites";
 
 // There is not yet a connection with the Pokemon API, that is why we do not write it like this:
 // const getFavPokemon = () => JSON.parse(localStorage.getItem(favPokemonKey)) || [];
@@ -54,6 +54,7 @@ const mockPokemon = [
 
 const getFavPokemon = () => {
     const saved = JSON.parse(localStorage.getItem(favPokemonKey));
+    console.log(saved);
     return saved && saved.length ? saved : mockPokemon;
 };
 
@@ -84,8 +85,10 @@ const getFavPokemon = () => {
 //     });
 // };
 
+const currentFavorites = getFavPokemon();
+
 const displayFavPokemon = () => {
-    const favPokemon = getFavPokemon();
+    const favPokemon = currentFavorites;
     const card = document.getElementById("pokemon-card");
 
     //Remove existing list entries
@@ -138,7 +141,7 @@ const displayFavPokemon = () => {
         notes.classList.add(
             "mt-5",
             "border",
-            "broder-gray-400",
+            "border-gray-400",
             "bg-white",
             "w-60",
             "h-20"
@@ -160,7 +163,10 @@ const displayFavPokemon = () => {
         saveButton.addEventListener("click", () => {
             const userNote = notes.value;
             pokemon.note = userNote;
-            localStorage.setItem(favPokemonKey, JSON.stringify(favPokemon));
+            localStorage.setItem(
+                favPokemonKey,
+                JSON.stringify(currentFavorites)
+            );
             notes.value = "";
             alert("Note sucessfully saved!");
         });
