@@ -57,6 +57,7 @@ const mockPokemon = [
 
 const getFavPokemon = () => {
   const saved = JSON.parse(localStorage.getItem(favPokemonKey));
+  console.log(saved);
   return saved && saved.length ? saved : mockPokemon;
 };
 
@@ -87,8 +88,10 @@ const getFavPokemon = () => {
 //     });
 // };
 
+const currentFavorites = getFavPokemon();
+
 const displayFavPokemon = () => {
-  const favPokemon = getFavPokemon();
+  const favPokemon = currentFavorites;
   const card = document.getElementById("pokemon-card");
 
   //Remove existing list entries
@@ -141,7 +144,7 @@ const displayFavPokemon = () => {
     notes.classList.add(
       "mt-5",
       "border",
-      "broder-gray-400",
+      "border-gray-400",
       "bg-white",
       "w-60",
       "h-20"
@@ -164,6 +167,14 @@ const displayFavPokemon = () => {
       const userNote = notes.value;
       pokemon.note = userNote;
       localStorage.setItem(favPokemonKey, JSON.stringify(favPokemon));
+      notes.value = "";
+      alert("Note sucessfully saved!");
+    });
+    // Create link between save button and respective text field. But: only last note saved is displayed in console
+    saveButton.addEventListener("click", () => {
+      const userNote = notes.value;
+      pokemon.note = userNote;
+      localStorage.setItem(favPokemonKey, JSON.stringify(currentFavorites));
       notes.value = "";
       alert("Note sucessfully saved!");
     });
