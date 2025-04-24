@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-gray-200 h-screen">
+    <header
+      class="flex items-center justify-between bg-yellow-400 p-2 w-full gap-4"
+    >
+      <img
+        src="src/images/Screenshot 2025-04-15 at 22.11.56.png"
+        alt="pokemon logo"
+        width="150"
+      />
+
+      <form
+        id="search-bar"
+        class="flex flex-1 bg-gray-200 p-2 rounded-md max-w-xl"
+      >
+        <input
+          type="search"
+          placeholder="Search for your pokemon"
+          class="flex-grow p-1 rounded-md"
+        />
+        <button type="submit" class="ml-2 text-3xl">🔍</button>
+      </form>
+
+      <nav class="font-bold">
+        <ul class="flex gap-10 mr-6 text-2xl">
+          <li>
+            <a
+              href="index.html"
+              class="bg-blue-500 p-1 rounded-md text-white hover:bg-blue-400"
+              >Home</a
+            >
+          </li>
+          <li class="bg-blue-500">
+            <a
+              href="src/journal.html"
+              class="bg-blue-500 p-1 rounded-md text-white hover:bg-blue-400"
+              >Journal</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <!-- <div class="">
+          <img
+            src="src/images/8bdaa60b-e59e-437d-9e7f-bf3d185b05ce.png"
+            alt="main image"
+            class="w-full"
+          />
+        </div> -->
+      </section>
+    </main>
+    <footer class="bg-yellow-400 p-2 text-center">
+      <p>&copy;Pokedex Diary. All rights reserved</p>
+      <p>
+        Disclaimer: This site is not affiliated with Nintendo, Game Freak, or
+        The Pokémon Company. Pokémon and all related content are © Nintendo,
+        Game Freak, and The Pokémon Company. All trademarks and copyrights
+        belong to their respective owners.
+      </p>
+    </footer>
+    <script src="src/main.js"></script>
+  </body>
+</html>
