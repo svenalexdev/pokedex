@@ -33,8 +33,7 @@ function saveToFavorites(pokemon) {
     stats: pokemon.stats.map((stat) => ({
       name: stat.stat.name,
       value: stat.base_stat,
-    })),
-    notes: "",
+    }))
   };
 
   favorites.push(newFavorite);
