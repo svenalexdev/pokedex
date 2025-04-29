@@ -1,0 +1,14 @@
+{
+    "name": "pokedex-refactor",
+    "source": [
+        "index.html",
+        "src/journal.html"
+    ],
+    "scripts": {
+        "dev": "parcel",
+        "build": "parcel build"
+    },
+    "devDependencies": {
+        "parcel": "^2.14.4"
+    }
+}
