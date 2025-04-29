@@ -9,6 +9,9 @@
         "build": "parcel build"
     },
     "devDependencies": {
-        "parcel": "^2.14.4"
+        "@tailwindcss/postcss": "^4.1.4",
+        "parcel": "^2.14.4",
+        "postcss": "^8.5.3",
+        "tailwindcss": "^4.1.4"
     }
 }
