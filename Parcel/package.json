@@ -1,0 +1,19 @@
+{
+    "name": "Pokedex Parcel",
+    "version": "1.0.0",
+    "description": "Transforming project from Commonjs to Parcel",
+    "source": [
+        "index.html",
+        "journal.html"
+    ],
+    "scripts": {
+        "dev": "parcel",
+        "build": "parcel build"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.5",
+        "parcel": "^2.14.4",
+        "postcss": "^8.5.3",
+        "tailwindcss": "^4.1.5"
+    }
+}

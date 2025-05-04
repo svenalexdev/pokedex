@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Journal for Favorite Pokemons</title>
+        <script type="module" src="src/scripts/journal.js"></script>
+        <link rel="stylesheet" href="src/index.css" />
+    </head>
+    <body class="bg-gray-100">
+        <header>
+            <nav class="bg-yellow-400 p-4 flex justify-between items-center">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png"
+                    alt="pokemon-logo"
+                    class="w-40"
+                />
+                <p class="text-5xl text-gray-100">|</p>
+                <h1 class="text-5xl font-bold text-blue-600">
+                    Favorite Pokémon Journal
+                </h1>
+                <p class="text-5xl text-gray-100">|</p>
+                <ul class="mr-10 flex gap-4 font-bold">
+                    <li>
+                        <a
+                            href="/index.html"
+                            class="hover:bg-blue-500 bg-blue-600 text-white py-1 px-2 rounded"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#journal"
+                            class="hover:bg-blue-500 bg-blue-600 text-white py-1 px-2 rounded"
+                            >Journal</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main class="h-auto">
+            <div class="flex justify-center">
+                <h2
+                    class="ml-4 mt-10 p-2 font-semibold bg-blue-600 text-white rounded inline-block w-150 text-center text-lg"
+                >
+                    Overview of Your Favorite Pokémon:
+                </h2>
+            </div>
+            <!-- <ul
+                    id="favorite-pokemon"
+                    class="bg-white ml-4 mt-10 w-73 rounded"
+                ></ul> -->
+            <section id="pokemon-card" class="grid grid-cols-3 gap-6"></section>
+        </main>
+        <footer
+            class="mt-10 bg-yellow-400 h-10 flex items-center justify-center"
+        >
+            <p class="text-blue-600 font-semibold text-sm">
+                © 2025 Pokémon Journal. All rights reserved. This site is a
+                fan-made project and is not affiliated with Nintendo, Game
+                Freak, or The Pokémon Company.
+            </p>
+        </footer>
+        <script type="module" src="src/scripts/journal.js"></script>
+    </body>
+</html>
