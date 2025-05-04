@@ -89,10 +89,7 @@ const displayFavPokemon = (currentFavorites) => {
         saveButton.addEventListener("click", () => {
             const userNote = notes.value;
             pokemon.note = userNote;
-            localStorage.setItem(
-                favPokemonKey,
-                JSON.stringify(favPokemon)
-            );
+            localStorage.setItem(favPokemonKey, JSON.stringify(favPokemon));
             notes.value = "";
             alert("Note sucessfully saved!");
         });
@@ -107,4 +104,4 @@ const displayFavPokemon = (currentFavorites) => {
     });
 };
 
-export {displayFavPokemon};
+export { displayFavPokemon };
